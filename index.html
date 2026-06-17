@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oleksandr Pietushkov — CEO &amp; Project Management</title>
+<meta name="description" content="Oleksandr Pietushkov — Chief Executive Officer, manufacturing and industrial operations, investment and project management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3864;
+    --navy-soft:#2E4D7B;
+    --amber:#E8A33D;
+    --amber-deep:#C9821B;
+    --bg:#F7F7F5;
+    --ink:#222222;
+    --muted:#5C6373;
+    --line:#E2E1DC;
+    --white:#FFFFFF;
+    --maxw:1080px;
+    --r:10px;
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:17px}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- header ---------- */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,247,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:20px;height:64px}
+  .brand{font-weight:800;letter-spacing:.2px;color:var(--navy);font-size:18px;white-space:nowrap}
+  .nav{display:flex;gap:22px;margin-left:14px;flex:1}
+  .nav a{font-size:14.5px;color:var(--muted);font-weight:500;transition:color .15s}
+  .nav a:hover{color:var(--navy)}
+  .head-actions{display:flex;align-items:center;gap:14px;margin-left:auto}
+  .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--white)}
+  .lang button{appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:13px;font-weight:600;color:var(--muted);padding:6px 12px;transition:.15s}
+  .lang button[aria-pressed="true"]{background:var(--navy);color:#fff}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:14.5px;border:1px solid transparent;border-radius:999px;padding:11px 20px;cursor:pointer;transition:transform .12s ease, background .15s, color .15s, border-color .15s;white-space:nowrap}
+  .btn:active{transform:translateY(1px)}
+  .btn-amber{background:var(--amber);color:#3a2700}
+  .btn-amber:hover{background:var(--amber-deep);color:#fff}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-soft)}
+  .btn-ghost{background:transparent;border-color:var(--navy);color:var(--navy)}
+  .btn-ghost:hover{background:var(--navy);color:#fff}
+  .head-actions .btn{padding:9px 16px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:72px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:18px}
+  .hero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+  .hero .position{margin-top:18px;font-size:clamp(17px,2vw,21px);color:var(--ink);font-weight:500;max-width:30ch}
+  .hero .position b{color:var(--navy);font-weight:600}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .portrait{position:relative}
+  .portrait img{width:100%;border-radius:14px;box-shadow:0 24px 60px -28px rgba(31,56,100,.55);position:relative;z-index:2}
+  .portrait::after{content:"";position:absolute;inset:auto -16px -16px auto;width:62%;height:62%;background:var(--amber);border-radius:14px;z-index:1}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+  .sec-head h2{font-size:clamp(24px,3.2vw,32px);font-weight:800;color:var(--navy);letter-spacing:-.3px}
+  .sec-head .rule{flex:1;height:1px;background:var(--line)}
+  .lead{font-size:clamp(18px,2.1vw,21px);line-height:1.7;max-width:62ch;color:var(--ink)}
+
+  /* competencies */
+  .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .comp{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;font-weight:600;font-size:15.5px;color:var(--navy);display:flex;align-items:center;gap:12px}
+  .comp::before{content:"";flex:none;width:8px;height:8px;border-radius:2px;background:var(--amber);transform:rotate(45deg)}
+
+  /* projects */
+  .proj-list{display:grid;gap:16px}
+  .proj{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:var(--r);padding:20px 22px}
+  .proj b{color:var(--navy)}
+  .proj p{margin:0;color:var(--ink)}
+
+  /* experience timeline (signature) */
+  .timeline{position:relative;padding-left:34px}
+  .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--navy),var(--line))}
+  .tl-item{position:relative;padding:0 0 30px 8px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:-33px;top:5px;width:18px;height:18px;border-radius:50%;background:var(--white);border:3px solid var(--amber);box-shadow:0 0 0 3px var(--bg)}
+  .tl-period{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--amber-deep);text-transform:uppercase}
+  .tl-role{font-size:19px;font-weight:700;color:var(--navy);margin-top:3px}
+  .tl-org{font-size:15px;color:var(--muted);font-weight:500;margin-top:1px}
+  .tl-org a{border-bottom:1px solid transparent;transition:.15s}
+  .tl-org a:hover{color:var(--navy);border-color:var(--amber)}
+  .tl-desc{margin-top:9px;color:var(--ink);font-size:15.5px}
+
+  /* education */
+  .edu-list{display:grid;gap:14px}
+  .edu{display:grid;grid-template-columns:120px 1fr;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
+  .edu .yr{font-weight:700;color:var(--amber-deep);font-size:15px}
+  .edu .body b{color:var(--navy)}
+
+  /* languages */
+  .lang-list{display:flex;flex-wrap:wrap;gap:10px}
+  .lang-chip{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px;color:var(--navy)}
+  .lang-chip span{color:var(--muted);font-weight:500}
+
+  /* contact / footer */
+  .contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:48px;align-items:center}
+  .contact h2{color:#fff}
+  #contact{background:var(--navy);color:#fff;border-top:0;margin-top:8px}
+  #contact .sec-head .rule{background:rgba(255,255,255,.22)}
+  #contact .lead{color:rgba(255,255,255,.9)}
+  .contact-list{margin-top:22px;display:grid;gap:12px}
+  .contact-list a,.contact-list span{display:inline-flex;align-items:center;gap:12px;font-size:17px;color:#fff;font-weight:500}
+  .contact-list a:hover{color:var(--amber)}
+  .contact-list .ic{flex:none;width:22px;text-align:center;color:var(--amber);font-weight:700}
+  .contact-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .contact .portrait img{box-shadow:0 24px 60px -28px rgba(0,0,0,.6)}
+  .contact .portrait::after{background:var(--amber)}
+  .foot{padding:22px 0;text-align:center;color:var(--muted);font-size:13.5px}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:880px){
+    .nav{display:none}
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .portrait{order:-1;max-width:360px;margin:0 auto}
+    .comp-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr;gap:32px}
+    .contact .portrait{max-width:300px}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .head-actions .btn-book-head{display:none}
+    .comp-grid{grid-template-columns:1fr}
+    .edu{grid-template-columns:1fr;gap:4px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+<noscript><div style="padding:16px;background:#fde9c8;text-align:center">Please enable JavaScript to view this page / Увімкніть JavaScript для перегляду сторінки.</div></noscript>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top" data-k="name">Oleksandr Pietushkov</a>
+    <nav class="nav" id="nav"></nav>
+    <div class="head-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" aria-pressed="true">EN</button>
+        <button data-lang="uk" aria-pressed="false">UA</button>
+      </div>
+      <a class="btn btn-amber btn-book-head" data-act="book" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top" style="border-top:0">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow" data-k="eyebrow"></span>
+        <h1 data-k="name"></h1>
+        <p class="position" data-k="position"></p>
+        <div class="hero-cta">
+          <a class="btn btn-navy" data-act="linkedin" target="_blank" rel="noopener"></a>
+          <a class="btn btn-amber" data-act="book" target="_blank" rel="noopener"></a>
+          <a class="btn btn-ghost" data-act="cv"></a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img id="heroImg" src="assets/241A9707.jpeg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section id="profile" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-k="t_profile"></h2><span class="rule"></span></div>
+      <p class="lead" data-k="profile"></p>
+    </div>
+  </section>
+
+  <section id="competencies" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-k="t_competencies"></h2><span class="rule"></span></div>
+      <div class="comp-grid" id="compGrid"></div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-k="t_projects"></h2><span class="rule"></span></div>
+      <div class="proj-list" id="projList"></div>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-k="t_experience"></h2><span class="rule"></span></div>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <section id="education" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-k="t_education"></h2><span class="rule"></span></div>
+      <div class="edu-list" id="eduList"></div>
+    </div>
+  </section>
+
+  <section id="languages" class="reveal">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-k="t_languages"></h2><span class="rule"></span></div>
+      <div class="lang-list" id="langList"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact reveal">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="sec-head"><h2 data-k="t_contact"></h2><span class="rule"></span></div>
+        <p class="lead" data-k="contactIntro"></p>
+        <div class="contact-list">
+          <a href="mailto:strateglab@gmail.com"><span class="ic">@</span>strateglab@gmail.com</a>
+          <a href="tel:+380672450290"><span class="ic">☎</span>+380 67 245 0290</a>
+          <a data-act="linkedin" target="_blank" rel="noopener"><span class="ic">in</span><span data-k="linkedinShort"></span></a>
+        </div>
+        <div class="contact-cta">
+          <a class="btn btn-amber" data-act="book" target="_blank" rel="noopener"></a>
+          <a class="btn btn-ghost" style="border-color:#fff;color:#fff" data-act="cv"></a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img id="contactImg" src="assets/DSCF0420.jpg" alt="">
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="foot wrap" id="foot"></div>
+
+<script>
+const LINKS = {
+  linkedin: "https://www.linkedin.com/in/oleksandr-pietushkov-b1b3665a",
+  book: "https://calendly.com/strateglab/"
+};
+
+const DATA = {
+  en: {
+    htmlLang:"en",
+    metaTitle:"Oleksandr Pietushkov — CEO & Project Management",
+    metaDesc:"Oleksandr Pietushkov — Chief Executive Officer, manufacturing and industrial operations, investment and project management.",
+    eyebrow:"Executive Profile",
+    name:"Oleksandr Pietushkov",
+    position:"<b>Chief Executive Officer</b> · Manufacturing & Industrial Operations · Investment & Project Management",
+    bookCall:"Book a call",
+    downloadCV:"Download CV",
+    linkedinBtn:"Connect on LinkedIn",
+    linkedinShort:"LinkedIn",
+    cvFile:"assets/CV_Pietushkov_EN.docx",
+    altHero:"Oleksandr Pietushkov, portrait in a navy suit",
+    altContact:"Oleksandr Pietushkov, portrait",
+    t_profile:"Profile",
+    t_competencies:"Core Competencies",
+    t_projects:"Key Projects",
+    t_experience:"Experience",
+    t_education:"Education & Certifications",
+    t_languages:"Languages",
+    t_contact:"Contact",
+    nav:{profile:"Profile",competencies:"Competencies",projects:"Projects",experience:"Experience",contact:"Contact"},
+    profile:"Senior executive with 25+ years of leadership across manufacturing, building-materials and construction businesses, combining General Director / CEO roles with a strong investment- and project-management track record. Built production plants from the ground up, led the re-equipment of Ukraine's largest large-panel house prefabrication factory, and delivered ISO 9001/14001 certification, CE marking and export-market entry for industrial manufacturers. Equally effective running day-to-day operations and steering complex international investment projects. Internationally educated in Ukraine, Austria and Germany; English C2.",
+    competencies:["P&L & General Management","Manufacturing & Plant Operations","Greenfield Set-up & Re-equipment","Investment & Project Management","Turnaround & Change Management","Strategy & Business Planning","ISO 9001 / 14001 & CE Marking","Export-Market Entry","Procurement & Supply Chain","Cost & Financial Management","Team Building & Org. Development","International Partnerships"],
+    projects:[
+      ["Re-equipment of Ukraine's largest large-panel house prefabrication factory","owned the full cycle: business plan, worldwide equipment sourcing, financing, installation, commissioning and go-to-market strategy (DBK-Zhytlobud)."],
+      ["Greenfield manufacturing plant and representative office built from zero","technology and equipment selection, production-process design, full permitting, and launch of domestic and export sales (Young Ukraine)."],
+      ["ISO 9001 / 14001 quality and environmental systems and CE marking","implemented for export-oriented manufacturers under EBRD grant-financing programmes (Royal-House, DBK-Zhytlobud)."],
+      ["National energy-efficiency network for Ukrainian building-materials manufacturers","established jointly with GIZ (Germany)."],
+      ["EU initiatives in Ukraine (construction & humanitarian)","introduction of Ukrainian construction materials to export markets and certification to international standards."]
+    ],
+    experience:[
+      ["2022 – Present","Project Manager","Interlinked Ukrainian & EU NGOs — charity projects in Ukraine","",
+        "Define strategy and lead day-to-day delivery of cross-border charitable programmes (EU–Ukraine); develop educational, humanitarian and medical-aid initiatives for Ukrainians."],
+      ["2020 – Present","Development Director","Win Experts Group of Companies","winexperts.com.ua",
+        "Develop and execute business-unit and marketing strategy; implement ISO 9001:2015 under EBRD grant-financing; roll out CRM across sales and regional teams; run construction-industry marketing education programmes across Ukrainian regions."],
+      ["2019 – Present","Chief Executive Officer","National Expert-Building Alliance of Ukraine (NEBAU)","nebau.org.ua",
+        "Represent the Alliance in government and international construction projects; drive initiatives and partnerships with government, IFIs and NGOs; launch digital initiatives for SMEs and communities; organise international workshops and conferences on BIM, smart construction and digitalisation."],
+      ["2012 – 2019","Chief International Officer / Investment Manager","Ukrainian Union of Manufacturers of Building Materials and Products (Association)","avbmv.com.ua",
+        "Represent the Association and members internationally; promote foreign investment; source international partners; advise on investment and business planning; lead legislative-initiative activity."],
+      ["2016 – 2017","Chief Development Officer","Royal-House Group of Companies","royal-house.ua",
+        "Launch the B2B segment for Ukraine's high-rise construction market; run pilot housing projects in Austria and Slovakia; implement ISO 9001/14001 and CE marking for export; turn around the woodworking business unit."],
+      ["2015 – 2016","Project Manager / Chief Development Officer","DBK-Zhytlobud Manufacturing & Construction Group","dbkzhytlobud.com.ua",
+        "Develop and execute the group's integrated action plan; source equipment, negotiate terms and project financing for the re-equipment of Ukraine's largest large-panel house prefabrication factory; implement ISO 9001/14001 and CE marking; introduce cleaner-production practices."],
+      ["2010 – 2011","General Director / CEO","Slobozhanska Budivelna Keramika — building-ceramics manufacturer","sbk.com.ua",
+        "Full P&L and general management: strategy, budgeting, cost control, financial monitoring; drive profitability via product strategy and cost reduction; lead procurement, R&D, recruitment and organisational improvement."],
+      ["2005 – 2010","General Director / CEO","Young Ukraine Ltd","youngua.com",
+        "Build the factory and office from the ground up — hiring, plant set-up, new technology and equipment, end-to-end processes; secure all permits; run domestic and export sales, budgeting and finance; establish an integrated procurement–production–sales system."],
+      ["1998 – 2005","Deputy General Director","Supermash Ltd","supermash.ua",
+        "General business and project management, strategic planning, budgeting and financial monitoring; optimise processes, structure, management accounting and sales."]
+    ],
+    education:[
+      ["2025–2026","Export Consultants Mastery, Visionest Institute (Estonia)","Certified Export Consultant (360 academic hours): export-market analysis, market-entry strategy, pricing, supply chains & INCOTERMS."],
+      ["2000","Kyiv National Economic University","MSc, Marketing Management."],
+      ["1999","Wirtschaftsuniversität Wien (Vienna University of Economics and Business), Austria","Marketing Management & International Trade (Certificate)."],
+      ["1998","Universität Konstanz, Germany","Faculty of Economics and Statistics (Certificate)."],
+      ["—","Certified Project Manager and Data Analyst",""]
+    ],
+    languages:[["Ukrainian, Russian","Native"],["English","C2"],["German","B2"],["Czech","B2"],["Hebrew","Beginner"]],
+    contactIntro:"Open to executive, advisory and project-leadership conversations. The fastest way to reach me is to book a short call.",
+    foot:"© 2026 Oleksandr Pietushkov. All rights reserved."
+  },
+  uk: {
+    htmlLang:"uk",
+    metaTitle:"Олександр Пєтушков — CEO та управління проєктами",
+    metaDesc:"Олександр Пєтушков — генеральний директор, виробничі та промислові підприємства, управління інвестиціями та проєктами.",
+    eyebrow:"Профіль керівника",
+    name:"Олександр Пєтушков",
+    position:"<b>Генеральний директор</b> · Виробничі та промислові підприємства · Управління інвестиціями та проєктами",
+    bookCall:"Записатися на зустріч",
+    downloadCV:"Завантажити CV",
+    linkedinBtn:"LinkedIn",
+    linkedinShort:"LinkedIn",
+    cvFile:"assets/CV_Pietushkov_UA.docx",
+    altHero:"Олександр Пєтушков, портрет у темно-синьому костюмі",
+    altContact:"Олександр Пєтушков, портрет",
+    t_profile:"Профіль",
+    t_competencies:"Ключові компетенції",
+    t_projects:"Ключові проєкти",
+    t_experience:"Досвід роботи",
+    t_education:"Освіта та сертифікації",
+    t_languages:"Мови",
+    t_contact:"Контакти",
+    nav:{profile:"Профіль",competencies:"Компетенції",projects:"Проєкти",experience:"Досвід",contact:"Контакти"},
+    profile:"Топ-менеджер із понад 25-річним досвідом керівництва виробничими підприємствами, компаніями будівельних матеріалів та будівельної галузі. Поєдную досвід генерального директора / CEO із сильним досвідом управління інвестиційними та проєктними ініціативами. Будував виробництва з нуля, керував переоснащенням найбільшого в Україні заводу великопанельного домобудування, упроваджував системи ISO 9001/14001, маркування CE та виведення продукції на експортні ринки. Однаково ефективний в операційному управлінні та в керівництві складними міжнародними інвестиційними проєктами. Міжнародна освіта (Україна, Австрія, Німеччина); англійська — C2.",
+    competencies:["P&L та загальне управління","Виробництво й операційне управління","Запуск виробництв з нуля, переоснащення","Управління інвестиціями та проєктами","Антикризове управління, управління змінами","Стратегічне та бізнес-планування","ISO 9001 / 14001 та маркування CE","Вихід на експортні ринки","Закупівлі та ланцюги постачання","Управління витратами та фінансами","Побудова команд, орг. розвиток","Міжнародні партнерства та інвестиції"],
+    projects:[
+      ["Переоснащення найбільшого в Україні заводу великопанельного домобудування","повний цикл: бізнес-план, пошук обладнання, фінансування, монтаж, пусконалагодження та маркетинг (ДБК-Житлобуд)."],
+      ["Виробничий завод та представництво, збудовані з нуля","вибір технологій та обладнання, проєктування процесів, отримання дозволів, запуск продажів на внутрішньому й експортному ринках (Young Ukraine)."],
+      ["Системи якості та екологічного управління ISO 9001 / 14001 і маркування CE","для експортоорієнтованих виробників у межах грантових програм ЄБРР (Royal-House, ДБК-Житлобуд)."],
+      ["Національна мережа енергоефективності для виробників будівельних матеріалів України","створена спільно з GIZ (Німеччина)."],
+      ["Ініціативи ЄС в Україні (будівельний та гуманітарний сектори)","виведення українських будівельних матеріалів на експортні ринки та сертифікація за міжнародними стандартами."]
+    ],
+    experience:[
+      ["2022 – дотепер","Проєктний менеджер","Пов'язані громадські організації України та ЄС — благодійні проєкти в Україні","",
+        "Визначаю стратегію та керую щоденною реалізацією транскордонних благодійних програм (ЄС–Україна); розробляю освітні, гуманітарні та медичні ініціативи допомоги українцям."],
+      ["2020 – дотепер","Директор з розвитку","Група компаній Win Experts","winexperts.com.ua",
+        "Розробляю стратегію бізнес-підрозділів і маркетингу; упровадив ISO 9001:2015 за грантовою програмою ЄБРР; запровадив CRM у продажах і регіональних командах; провів освітні маркетингові програми в регіонах України."],
+      ["2019 – дотепер","Генеральний директор (CEO)","Національний експертно-будівельний альянс України (НЕБАУ)","nebau.org.ua",
+        "Представляю Альянс у державних та міжнародних проєктах; розвиваю партнерства з урядом, МФО та ГО; запускав цифрові ініціативи для МСП і громад; організовую міжнародні воркшопи й конференції з BIM, smart-будівництва та цифровізації."],
+      ["2012 – 2019","Директор з міжнародних зв'язків / Інвестиційний менеджер","Асоціація «Українська спілка виробників будівельних матеріалів та виробів»","avbmv.com.ua",
+        "Представляю Асоціацію та її членів на міжнародному рівні; залучаю іноземні інвестиції; шукаю партнерів; консультую з інвестицій та бізнес-планування; веду законодавчі ініціативи."],
+      ["2016 – 2017","Директор з розвитку","Група компаній Royal-House","royal-house.ua",
+        "Запустив B2B-сегмент для ринку висотного будівництва; пілотні проєкти в Австрії та Словаччині; упровадив ISO 9001/14001 та маркування CE для експорту; реорганізував деревообробний підрозділ."],
+      ["2015 – 2016","Проєктний менеджер / Директор з розвитку","Виробничо-будівельна група компаній ДБК-Житлобуд","dbkzhytlobud.com.ua",
+        "Розробив комплексний план дій групи; пошук обладнання, переговори та фінансування проєкту переоснащення найбільшого в Україні заводу домобудування; упровадив ISO 9001/14001 та маркування CE; запровадив екологічно чисті практики."],
+      ["2010 – 2011","Генеральний директор (CEO)","Слобожанська будівельна кераміка — виробник будівельної кераміки","sbk.com.ua",
+        "Повна P&L- та загальне управління: стратегія, бюджетування, контроль витрат, фінансовий моніторинг; підвищення прибутковості через продуктові стратегії та скорочення витрат; керівництво закупівлями, R&D, персоналом та орг. розвитком."],
+      ["2005 – 2010","Генеральний директор (CEO)","Young Ukraine Ltd","youngua.com",
+        "Збудував завод та представництво з нуля — найм, організація виробництва, нові технології та обладнання, наскрізні процеси; отримав усі дозволи; керував продажами (внутрішній ринок та експорт), бюджетуванням і фінансами; побудував систему «закупівлі–виробництво–продажі»."],
+      ["1998 – 2005","Заступник генерального директора","Supermash Ltd","supermash.ua",
+        "Загальне управління бізнесом і проєктами, стратегічне планування, бюджетування та фінансовий моніторинг; оптимізація процесів, структури, управлінського обліку та продажів."]
+    ],
+    education:[
+      ["2025–2026","Export Consultants Mastery, Visionest Institute (Естонія)","сертифікований консультант з експорту (360 акад. годин): аналіз ринків, стратегії виходу, ціноутворення, ланцюги постачання, INCOTERMS."],
+      ["2000","Київський національний економічний університет","магістр, маркетинговий менеджмент."],
+      ["1999","Віденський університет економіки (Wirtschaftsuniversität Wien), Австрія","маркетинговий менеджмент, міжнародна торгівля (сертифікат)."],
+      ["1998","Університет Констанца (Universität Konstanz), Німеччина","факультет економічних наук і статистики (сертифікат)."],
+      ["—","Сертифікований проєктний менеджер та аналітик даних",""]
+    ],
+    languages:[["Українська, російська","рідна"],["Англійська","C2"],["Німецька","B2"],["Чеська","B2"],["Іврит","початковий"]],
+    contactIntro:"Відкритий до розмов щодо керівних, дорадчих та проєктних ролей. Найшвидший спосіб зв'язатися — записатися на коротку зустріч.",
+    foot:"© 2026 Олександр Пєтушков. Усі права захищено."
+  }
+};
+
+let LANG = "en";
+try { const s = localStorage.getItem("lang"); if (s==="en"||s==="uk") LANG = s; } catch(e){}
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+function render(lang){
+  const d = DATA[lang];
+  LANG = lang;
+  document.documentElement.lang = d.htmlLang;
+  document.title = d.metaTitle;
+  const md = document.querySelector('meta[name="description"]'); if(md) md.setAttribute("content", d.metaDesc);
+
+  // simple keyed text (allow inline <b> for position)
+  document.querySelectorAll("[data-k]").forEach(el=>{
+    const k = el.getAttribute("data-k");
+    if(d[k]==null) return;
+    if(k==="position") el.innerHTML = d[k];
+    else el.textContent = d[k];
+  });
+
+  // action buttons
+  document.querySelectorAll('[data-act]').forEach(el=>{
+    const a = el.getAttribute("data-act");
+    if(a==="book"){ el.href = LINKS.book; el.textContent = d.bookCall; }
+    if(a==="linkedin"){ el.href = LINKS.linkedin; if(!el.querySelector("[data-k]")) el.textContent = d.linkedinBtn; }
+    if(a==="cv"){ el.href = d.cvFile; el.setAttribute("download",""); el.textContent = d.downloadCV; }
+  });
+
+  // images alt
+  $("#heroImg").alt = d.altHero;
+  $("#contactImg").alt = d.altContact;
+
+  // nav
+  $("#nav").innerHTML = Object.entries(d.nav).map(([id,label])=>`<a href="#${id}">${esc(label)}</a>`).join("");
+
+  // competencies
+  $("#compGrid").innerHTML = d.competencies.map(c=>`<div class="comp">${esc(c)}</div>`).join("");
+
+  // projects
+  $("#projList").innerHTML = d.projects.map(p=>`<div class="proj"><p><b>${esc(p[0])}</b> — ${esc(p[1])}</p></div>`).join("");
+
+  // experience timeline
+  $("#timeline").innerHTML = d.experience.map(e=>{
+    const org = e[3] ? `${esc(e[2])} · <a href="https://${e[3]}" target="_blank" rel="noopener">${esc(e[3])}</a>` : esc(e[2]);
+    return `<div class="tl-item"><div class="tl-period">${esc(e[0])}</div><div class="tl-role">${esc(e[1])}</div><div class="tl-org">${org}</div><div class="tl-desc">${esc(e[4])}</div></div>`;
+  }).join("");
+
+  // education
+  $("#eduList").innerHTML = d.education.map(e=>{
+    const sub = e[2] ? ` — ${esc(e[2])}` : "";
+    return `<div class="edu"><div class="yr">${esc(e[0])}</div><div class="body"><b>${esc(e[1])}</b>${sub}</div></div>`;
+  }).join("");
+
+  // languages
+  $("#langList").innerHTML = d.languages.map(l=>`<div class="lang-chip">${esc(l[0])} <span>— ${esc(l[1])}</span></div>`).join("");
+
+  // footer
+  $("#foot").textContent = d.foot;
+
+  // lang buttons state
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.lang===lang)));
+}
+
+document.querySelectorAll(".lang button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    const l = b.dataset.lang;
+    render(l);
+    try{ localStorage.setItem("lang", l); }catch(e){}
+  });
+});
+
+render(LANG);
+
+// subtle reveal on scroll
+const io = new IntersectionObserver((ents)=>{
+  ents.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
