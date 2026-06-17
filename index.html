@@ -381,6 +381,7 @@ const DATA = {
 
 let LANG = "en";
 try { const s = localStorage.getItem("lang"); if (s==="en"||s==="uk") LANG = s; } catch(e){}
+try { const u = new URLSearchParams(location.search).get("lang"); if (u==="en"||u==="uk") LANG = u; } catch(e){}
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
